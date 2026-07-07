@@ -93,4 +93,4 @@ _Negative result = price reduction._
 
 _So if you see a negative markdown on a report, it's worth checking how that specific system defines the \_metric. In many retail systems, it simply indicates that the current selling price is higher than the reference price._
 
-That explains that nicely.
+That explains that nicely will help greatly with the analysis and interpretation of the data.

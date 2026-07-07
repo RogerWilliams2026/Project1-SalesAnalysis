@@ -6,7 +6,11 @@
 
 ## Dataset Content
 
-- Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's 100GB limit.
+Dataset contains 3 related CSV files:
+
+- Sales_Stores_DataSet.csv
+- Sales_Features_DataSet.csv
+- Sales_DataSet.csv
 
 ## Business Requirements
 
@@ -14,10 +18,20 @@
 
 ## Hypothesis and how to validate?
 
-- List here your project hypothesis(es) and how you envision validating it (them)
+- Sales differences between holiday and non-holiday weeks per store
+  Validation: Compare sales using statistical analysis and visualisation techniques.
+- What is most profitable store type?
+  Validation: Calculate monthly sales and compare across store types.
+- Does temperature affect monthly sales?
+  Validation: Use correlation analysis to determine the relationship between temperature and sales.
+- Impact of markdowns on sales during holidays versus non-holiday periods
+  Validation: Compare markdown data before and after the different periods.
+- Compare sales performance across different stores
+  Validation: Analyze sales across stores types.
 
 ## Project Plan
 
+- Testing my knowledge of the KANBAN project management, is in with this GitHub project
 - Outline the high-level steps taken for the analysis.
 - How was the data managed throughout the collection, processing, analysis and interpretation steps?
 - Why did you choose the research methodologies you used?
@@ -28,24 +42,17 @@
 
 ## Analysis techniques used
 
+From the 3 csv files 4 more are created 3 via ETL and 1 via merging the 3 cleaned csv files:
+
+- Sales_Stores_DataSet_Cleaned.csv
+- Sales_Features_DataSet_Cleaned.csv
+- Sales_DataSet_Cleaned.csv
+- Sales_Combined.csv
+
 - List the data analysis methods used and explain limitations or alternative approaches.
 - How did you structure the data analysis techniques? Justify your response.
 - Did the data limit you, and did you use an alternative approach to meet these challenges?
 - How did you use generative AI tools to help with ideation, design thinking and code optimisation?
-
-## Ethical considerations (optional)
-
-- Feel free to delete this section if this is a data visualisation only (unit 1 or 2) project submission.
-- Were there any data privacy, bias or fairness issues with the data?
-- How did you overcome any legal or societal issues?
-
-## Dashboard Design (optional)
-
-- Feel free to delete this section if this is a data visualisation only (unit 1 or 2) project submission.
-- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-- Later, during project development, you may revisit your dashboard plan to update a feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later you used another plot type).
-- How were data insights communicated to technical and non-technical audiences?
-- Explain how the dashboard was designed to communicate complex data insights to different audiences.
 
 ## Unfixed Bugs
 
