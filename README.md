@@ -12,10 +12,17 @@ Dataset contains 3 related CSV files:
 - Sales_Features_DataSet.csv
 - Sales_DataSet.csv
 
-Documents folder contains a file:
-What_AI_Used_For.md
+Project Folder Structure:
 
-Which describes in detail how I used AI to help with issues with the project.
+- Data <- No files stored here
+- Data/CleanedDataSets <- Contains cleaned data as csv files
+- Data/OriginalFiles <- Contains the original data csv files
+- Data/VisualisationDataSet <- Contains a combined csv file for visualisation
+- Documents <- Contains file: What_AI_Used_For.md (terrible grammar)
+- Jupyter_Notebooks <- Contains the Jupyter Notebooks used for ETL and Visualisation
+
+What_AI_Used_For.md:
+Describes in detail how I used AI to help with issues with the project.
 
 ## Business Requirements
 
@@ -84,10 +91,6 @@ Methods Used:
 
 - What challenges did you face, and what strategies were used to overcome these challenges?
 - What new skills or tools do you plan to learn next based on your project experience?
-
-## Deployment (optional)
-
-- If this is a Unit 3 Streamlit, Power BI or Tableau Public project, then you can include a link here and explain how you hosted the dashboard.
 
 ## Main Data Analysis Libraries
 

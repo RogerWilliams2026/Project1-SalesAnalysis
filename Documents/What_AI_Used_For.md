@@ -26,7 +26,7 @@ Viable as Type column only has A, B, C values.
 
 Scenario Two:
 
-Needed to replace missing values for markdown columns with zero, so for science asked Copilot for answer
+Needed to replace missing values for markdown columns with zero, n dfSales_Features_DataSet_Work so for science asked Copilot for the answer.
 
 Copilot responded with:
 
@@ -39,7 +39,7 @@ Works well.
 
 Scenario Three:
 
-Noticed negative values in MarkDown columns for dfSals_Features_DataSet_Work
+Noticed negative values in MarkDown columns for dfSales_Features_DataSet_Work
 
 Not being entirely sure what "markdown" actually means typed this into chatGPT:
 
