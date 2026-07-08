@@ -30,6 +30,9 @@ Describes in detail how I used AI to help with issues with the project.
 
 ## Hypothesis and how to validate?
 
+- Are sales increased if weather is hotter or colder?
+  Validation: Test with a suitable plot to show temperature and sales variances.
+
 - Sales differences between holiday and non-holiday weeks per store
   Validation: Compare sales using statistical analysis and visualisation techniques.
 - What is most profitable store type?
@@ -88,6 +91,8 @@ Methods Used:
   Re-installed dependancies from the requirements.txt file - works fine.
 - VS Code repeatedly has a kernel hang randomly during development requiring restarting VS Code  
   as kernel restart rarely fixed the issue.
+- First hypothesis raised an unexpected issue as some plot types would not render due to the data size!
+  bar plots particularly fell at the first fence. Pity as that would have looked cool...
 
 - What challenges did you face, and what strategies were used to overcome these challenges?
 - What new skills or tools do you plan to learn next based on your project experience?
@@ -101,21 +106,14 @@ Methods Used:
 - seaborn
 - matplotlib.pyplot
 
+## Others Added By Me
+
+- from matplotlib.ticker import MultipleLocator <- for "ticks" between axis values
+
 ## Credits
 
-- In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials; however, it is important to be very specific about these sources to avoid plagiarism.
-- You can break the credits section into Content and Media, depending on what you include in your project.
-
-### Content
-
-- The text for the Home page was taken from the Wikipedia Article A
-- Instructions on how to implement form validation were taken from a [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
+- Copilot quite useful for code snippets and ideas, but not always correct.
+- chatGPT really good for solving code issues so far everything suggested worked!
 
 ## Acknowledgements (optional)
 

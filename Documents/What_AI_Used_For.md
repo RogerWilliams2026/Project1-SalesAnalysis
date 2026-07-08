@@ -115,3 +115,38 @@ Amended my code to so it had index and date_format in the CSV save command e.g:
 dfCleaned.to_csv(strCurrentDir + CNST_STR_CLEANFILEPATH,index=False, date_format="%d/%m/%Y"
 
 Scenario Five:
+
+First visualisation. Was not happy with the x axis as there is no indicator BETWEEN the x axis values
+to show the reader (analyst) what the values are between the x axis values. So asked chatGPT for a solution with this mighty question:
+
+in python matplotlib when a scatter plot is created the x axis markers for values could be 0, 20, 40, 60, 80 is there anyway to get some visual mark on the x axis the values BETWEEN the numbers i.e. a marker for every 2 values a crude ASCII based example
+0 20
+| | | | | | | | |
+
+chatGPT responded with:
+
+_Yes. In Matplotlib, what you want is called minor ticks. You can add smaller tick marks between the major ticks (0, 20, 40, …) using MultipleLocator._
+
+_import matplotlib.pyplot as plt_
+_from matplotlib.ticker import MultipleLocator_
+
+_x = [0, 10, 25, 40, 60, 80]_
+_y = [5, 12, 7, 20, 15, 25]_
+
+_fig, ax = plt.subplots()_
+
+_ax.scatter(x, y)_
+
+_# Major ticks every 20 units_
+_ax.xaxis.set_major_locator(MultipleLocator(20))_
+
+_# Minor ticks every 2 units_
+_ax.xaxis.set_minor_locator(MultipleLocator(2))_
+
+_# Make minor tick marks visible_
+_ax.tick_params(axis='x', which='minor', length=4)_
+_ax.tick_params(axis='x', which='major', length=8)_
+
+_plt.show()_
+
+Heavily modfiied the code idea to fit the project.
