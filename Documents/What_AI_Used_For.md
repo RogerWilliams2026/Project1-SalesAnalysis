@@ -94,3 +94,24 @@ _Negative result = price reduction._
 _So if you see a negative markdown on a report, it's worth checking how that specific system defines the \_metric. In many retail systems, it simply indicates that the current selling price is higher than the reference price._
 
 That explains that nicely will help greatly with the analysis and interpretation of the data.
+
+Scenario Four:
+
+Discovered when saving the cleaned DataFrames to CSV, if it contained a date column even if it was formatted as datetime with string format of %d/%m/%Y, when saved to CSV it would be saved in American format of %m/%d/%Y!!
+
+Typed this into chatGPT:
+
+_in python pandas converted a str column to date and formatted using:
+dfSales_DataSet_Work["Date"] = pd.to_datetime(dfSales_DataSet_Work["Date"], format="%d/%m/%Y")
+However saving the dataframe to CSV it writes the Date column in format yyyy/mm/dd?_
+
+chatGPT responded with:
+
+_This is expected behavior. When you convert the column
+you are not storing a formatted date string. You are converting the column to pandas' internal datetime64 type._
+_Pandas stores dates internally without a display format. When you save to CSV, pandas uses its default representation_
+
+Amended my code to so it had index and date_format in the CSV save command e.g:
+dfCleaned.to_csv(strCurrentDir + CNST_STR_CLEANFILEPATH,index=False, date_format="%d/%m/%Y"
+
+Scenario Five:
