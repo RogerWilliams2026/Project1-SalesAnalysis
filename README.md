@@ -93,13 +93,14 @@ Methods Used:
   as kernel restart rarely fixed the issue.
 - First hypothesis raised an unexpected issue as some plot types would not render due to the data size!
   bar plots particularly fell at the first fence. Pity as that would have looked cool...
+- trying to visualise plots with plotly.express produced an error stating nbformat was not installed.  
+  Used pip install nbformat and added to dependencies in Notebook_Visualisations.ipynb to fix the issue
 
 - What challenges did you face, and what strategies were used to overcome these challenges?
 - What new skills or tools do you plan to learn next based on your project experience?
 
 ## Main Data Analysis Libraries
 
-- os
 - numpy
 - pandas
 - plotly.express
@@ -109,6 +110,8 @@ Methods Used:
 ## Others Added By Me
 
 - from matplotlib.ticker import MultipleLocator <- for "ticks" between axis values
+- import nbformat <- added by me for plotly.express visualisation issue
+- os <- for directory routines
 
 ## Credits
 

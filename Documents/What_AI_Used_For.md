@@ -150,3 +150,40 @@ _ax.tick_params(axis='x', which='major', length=8)_
 _plt.show()_
 
 Heavily modfiied the code idea to fit the project.
+
+Scenario Six:
+
+When trying to visualise plots with plotly.express could not finf a way to get imtermediate ticks between the x axis values. So asked chatGPT for a solution with this question:
+
+_python plotly.express create plot with this code_
+_px.scatter(dfSales_Combined_DataSet, x="Temperature", y="Weekly_Sales",
+title="Sales vs Temperature", color="Temperature", opacity=0.5)_
+_how can I get ticks across bot axes?_
+
+chatGPT responded with:
+
+_I think I understand. You're looking for minor ticks between the major tick marks (e.g. if the x-axis labels are 0, 20, 40, you'd like small tick marks at 10, 30, etc.)._
+
+_Unfortunately, Plotly Express doesn't display minor ticks by default, and dtick only changes the major tick spacing—it doesn't add intermediate ticks._
+
+_If you're using Plotly 5.8+, you can enable minor ticks:_
+
+_fig.update_xaxes(_
+_ ticks="outside",_
+_ minor=dict(_
+_ ticks="outside",_
+_ ticklen=4,_
+_ showgrid=False_
+_ )_
+_)_
+
+_fig.update_yaxes(_
+_ ticks="outside",_
+_ minor=dict(_
+_ ticks="outside",_
+_ ticklen=4,_
+_ showgrid=False_
+_ )_
+_)_
+
+Copied it and used it!
