@@ -57,14 +57,16 @@ The business hopes this basic information will help it plan its store growth and
   Validation: Compare store types with weekly sales.
 - Does store size affect profitability? If so, how much?
   Validation: Compare store size with weekly sales
-- Impact of markdowns on sales during holidays versus non-holiday periods
+-
+
+- Impact of markdowns on sales during holidays versus non holiday periods
   Validation: Compare markdown data before and after the different periods
 -
 
 Future Ideas:
 
-- Does temperature affect monthly sales?
-  Validation: Use correlation analysis to determine the relationship between temperature and sales.
+- What are the most profitable departments per store?
+- Some sort of report needing monthly values
 
 ## Project Plan
 
@@ -96,6 +98,11 @@ Methods Used:
 - How did you use generative AI tools to help with ideation, design thinking and code optimisation?
 
 ## Development Roadmap
+
+### Basic Strategy:
+
+- Start with basic plots to visualise the data then if have the time try ans expand and develop
+  them further. Would be sweet to get some 3D plots in..
 
 ### Challenges and Strategies
 
