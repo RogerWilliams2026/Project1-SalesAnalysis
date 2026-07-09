@@ -21,7 +21,19 @@ Project Folder Structure:
 - Documents <- Contains file: What_AI_Used_For.md (terrible grammar)
 - Jupyter_Notebooks <- Contains the Jupyter Notebooks used for ETL and Visualisation
 
+Jupyter_Notebooks:
+There are separate notebooks for ETL on each csv file. THis was done so I can make sure each csv file is processed correctly which is easier to debug in one small notebook than a huge notebook with allthe csv files in.
+
+Notebook Files:
+
+- Notebook_ETL_Sales_Stores.ipynb <- ETL for Sales_Stores_DataSet.csv
+- Notebook_ETL_Sales_Features.ipynb <- ETL for Sales_Features_DataSet.csv
+- Notebook_ETL_Sales.ipynb <- ETL for Sales_DataSet.csv
+- Notebook_ETL_Sales_Combined.ipynb <- Combines the 3 cleaned csv files into one for visualisation
+- Notebook_Visualisations.ipynb <- Contains the visualisations for the hypotheses
+
 What_AI_Used_For.md:
+
 Describes in detail how I used AI to help with issues with the project.
 
 ## Business Requirements
@@ -31,18 +43,21 @@ Describes in detail how I used AI to help with issues with the project.
 ## Hypothesis and how to validate?
 
 - Are sales increased if weather is hotter or colder?
-  Validation: Test with a suitable plot to show temperature and sales variances.
+  Validation: Test with a suitable plot to show temperature and sales correlation.
 
 - Sales differences between holiday and non-holiday weeks per store
   Validation: Compare sales using statistical analysis and visualisation techniques.
-- What is most profitable store type?
+- What is most profitable store type by monthly sales?
   Validation: Calculate monthly sales and compare across store types.
-- Does temperature affect monthly sales?
-  Validation: Use correlation analysis to determine the relationship between temperature and sales.
 - Impact of markdowns on sales during holidays versus non-holiday periods
   Validation: Compare markdown data before and after the different periods.
 - Compare sales performance across different stores
   Validation: Analyze sales across stores types.
+
+Future Ideas:
+
+- Does temperature affect monthly sales?
+  Validation: Use correlation analysis to determine the relationship between temperature and sales.
 
 ## Project Plan
 
@@ -95,6 +110,17 @@ Methods Used:
   bar plots particularly fell at the first fence. Pity as that would have looked cool...
 - trying to visualise plots with plotly.express produced an error stating nbformat was not installed.  
   Used pip install nbformat and added to dependencies in Notebook_Visualisations.ipynb to fix the issue
+
+## New Skills and Tools
+
+- Generative AI tools (Copilot and chatGPT) helped hugely with strange library issues and code snippets.
+- Learned aboOt project management, and effective timeboxing for project sections e.g. documentation
+- Discovered I preferred plotly as a visualisation tool due to its better appearence and options.
+
+## Things To Learn Next
+
+- Proper use of KANBAN for project management
+- How to dynamically create ranges for subplots e.g. stores 1 to 9
 
 - What challenges did you face, and what strategies were used to overcome these challenges?
 - What new skills or tools do you plan to learn next based on your project experience?
