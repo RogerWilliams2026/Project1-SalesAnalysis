@@ -38,21 +38,28 @@ Describes in detail how I used AI to help with issues with the project.
 
 ## Business Requirements
 
-- Describe your business requirements
+- Business requires insights into the generic performance of the business in certain key areas:
+  - Are sales increased if weather is hotter or colder?
+  - What are the sales differences between holiday and non-holiday weeks per store?
+  - What is most profitable store type?
+  - Does store size affect profitability? If so, how much?
+  - What affect does markdowns have on sales during holidays versus non-holiday periods?
+
+The business hopes this basic information will help it plan its store growth and marketing strategies to maximise profits in the areas that are shown to be profitable, but also focus on improvement for the stores that are not performing well.
 
 ## Hypothesis and how to validate?
 
 - Are sales increased if weather is hotter or colder?
   Validation: Test with a suitable plot to show temperature and sales correlation.
-
 - Sales differences between holiday and non-holiday weeks per store
   Validation: Compare sales using statistical analysis and visualisation techniques.
-- What is most profitable store type by monthly sales?
-  Validation: Calculate monthly sales and compare across store types.
+- What is most profitable store type?
+  Validation: Compare store types with weekly sales.
+- Does store size affect profitability? If so, how much?
+  Validation: Compare store size with weekly sales
 - Impact of markdowns on sales during holidays versus non-holiday periods
-  Validation: Compare markdown data before and after the different periods.
-- Compare sales performance across different stores
-  Validation: Analyze sales across stores types.
+  Validation: Compare markdown data before and after the different periods
+-
 
 Future Ideas:
 
@@ -87,12 +94,6 @@ Methods Used:
 - How did you structure the data analysis techniques? Justify your response.
 - Did the data limit you, and did you use an alternative approach to meet these challenges?
 - How did you use generative AI tools to help with ideation, design thinking and code optimisation?
-
-## Unfixed Bugs
-
-- Please list any unfixed bugs and explain why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
-- Did you recognise gaps in your knowledge, and how did you address them?
-- If applicable, include evidence of feedback received (from peers or instructors) and how it improved your approach or understanding.
 
 ## Development Roadmap
 
@@ -138,6 +139,14 @@ Methods Used:
 - from matplotlib.ticker import MultipleLocator <- for "ticks" between axis values
 - import nbformat <- added by me for plotly.express visualisation issue
 - os <- for directory routines
+
+## Unfixed Bugs
+
+- Had strange issue with first plot in hypothessis 3, where it put: 1e9 in the top left corner of the
+  plot. No idea why. Will have a look if there is a soultion if I have time does not affect plot data.
+- Please list any unfixed bugs and explain why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
+- Did you recognise gaps in your knowledge, and how did you address them?
+- If applicable, include evidence of feedback received (from peers or instructors) and how it improved your approach or understanding.
 
 ## Credits
 
