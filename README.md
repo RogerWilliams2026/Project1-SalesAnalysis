@@ -23,7 +23,7 @@ These shall be cleaned and transformed into 3 cleaned CSV files, then combined i
 - Documents <- Contains file: What_AI_Used_For.md (terrible grammar)
 - Jupyter_Notebooks <- Contains the Jupyter Notebooks used for ETL and Visualisation
 - Report <- Contains the report for the project
-- Report/Images <- Contains images used in the report
+- Report/Images <- Contains images used in the report and all plot images
 
 **Jupyter_Notebooks:**
 
@@ -36,7 +36,12 @@ There are separate notebooks for ETL on each csv file. THis was done so I can ma
 - Notebook_ETL_Sales_Features_DataSet.ipynb <- ETL for Sales_Features_DataSet.csv
 - Notebook_ETL_Sales_Combined_DataSet.ipynb <- Combines the 3 cleaned csv files into one for visualisation
 - Notebook_Visualisations.ipynb <- Contains the visualisations for the hypotheses
-- Notebook_Reports.ipynb <- Contains the reports for the visualisations
+
+**Report File**
+
+- AnalysisConclusion.md <- Contains the reports for the visualisations this is the final report for the
+  project and contains the analysis and conclusions for each hypothesis, _however_ the plots are represented as images in the report and are not interactive. The interactive plots can be found in the Notebook_Visualisations.ipynb notebook.
+  This is report is two fold, is a great metric as to whether I can convey analysis in retrospect to the data story and test my ability to create an understandable report!
 
 **Documents:**
 
@@ -213,10 +218,13 @@ Which of course after a good nights sleep I realised _I_ was using the wrong plo
 - import nbformat <- added by me for plotly.express visualisation issue
 - os <- for directory routines
 
-## Unfixed Bugs
+## Unfixed Bugs and Things To Improve
 
 - Had strange issue with first plot in hypothesis 3, where it puts: 1e9 in the top left corner of the
   pyplot plot. No idea why. Will have a look if there is a solution if I have time does not affect plot data.
+- Uniformity regardling currency symbols in plots!
+- When adding images into the report markdown file VS Code creates a copy and puts it into the same
+  folder Must discover if it is possible to use relative paths to stop it duplicating images and putting them into the wrong folder!
 
 ## Credits
 
