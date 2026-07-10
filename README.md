@@ -22,6 +22,8 @@ These shall be cleaned and transformed into 3 cleaned CSV files, then combined i
 - Data/VisualisationDataSet <- Contains a combined csv file for visualisation
 - Documents <- Contains file: What_AI_Used_For.md (terrible grammar)
 - Jupyter_Notebooks <- Contains the Jupyter Notebooks used for ETL and Visualisation
+- Report <- Contains the report for the project
+- Report/Images <- Contains images used in the report
 
 **Jupyter_Notebooks:**
 
@@ -46,7 +48,7 @@ Describes in detail how I used AI to help with issues with the project.
 
 The customer requires insights into the performance of the business in key areas, including sales trends, store performance, and the impact of various factors on sales. The business is particularly interested in understanding how weather, holidays, store types, and store sizes affect sales and profitability.
 
-Additionally, the business wants to explore the impact of markdowns on sales during holiday and non-holiday periods.
+Additionally, the business wants to explore the impact of markdowns on sales during holiday periods.
 
 It is a requirement that all analysis is done based on the last 12 months of data, and that the findings are presented in a clear and concise manner.
 
@@ -65,7 +67,7 @@ The business hopes this information will help it plan its store growth and marke
 - Weekly Sales by Store and Department Last 12 Months
   Validation: Compare weekly sales by store and department using appropriate plot
 - Impact of markdowns on sales during holiday periods in the last 12 months by store
-  Validation: Accumulate and visualise markdown data per store including holiday periods
+  Validation: Accumulate and visualise markdown data per store during holiday periods
 
 **Future Ideas To Propose To The Customer:**
 
@@ -90,7 +92,7 @@ _Hypothesis 1: Are sales increased if weather is hotter or colder in the last 12
 Chose scatter plot to show the correlation between temperature and sales. Due to the large amount of data, a scatter plot is the best way to visualise the data and show the correlation.
 
 _Hypothesis 2: Sales differences between holiday and non-holiday weeks per store in the last 12 months_
-Chose boxplot to show the sales differences between holiday and non-holiday weeks per store as it is the best way to visualise the data and show the differences between the two groups.
+Chose boxplot to show the sales differences between holiday and non-holiday weeks per store as it seems the best way to visualise the data and show the differences between the two groups.
 
 _Hypothesis 3: What is most profitable store type in the last 12 months?_
 Chose bar plot to show the sales differences between store types. As provides a simple easy to read visualisation of the data.
@@ -99,18 +101,17 @@ _Hypothesis 4: Does store size affect profitability? If so, how much in the last
 Chose scatter plot to show the correlation between store size and sales. Due to the large amount of data, a scatter plot is the best way to visualise the data and show the correlation without causing the plot render engine to crash!
 
 _Hypothesis 5: Weekly Sales by Store and Department Last 12 Months_
-Chose sunburst plot to allow the viewer to drill down into the data and see the individual departments weekly sales per store s other types produced large confusing visualisation or cramped plots due to sheer amount of data.
+Chose sunburst plot to allow the viewer to drill down into the data and see the individual departments weekly sales per store. Other types produced large confusing visualisations or cramped plots due to sheer amount of data.
 Felt an interactive approach lends itself better to this type of analysis, and adds a "hands on" approach to data visualisation.
 
 _Hypothesis 6: Impact of markdowns on sales during holiday periods in the last 12 months by store_
-Chose sunburst plot to show the sales and indiviudal markdowns per store during holiday periods as other types produced large confusing visualisation or cramped plots due to sheer amount of data.
-Again felt an interactive approach lends itself better to this type of analysis, and adds a "hands on" approach to data visualisation.
-
-_Hypothesis 7:_
+Chose sunburst plot to show the sales and indiviudal markdowns per store during holiday periods as other types produced large confusing visualisations or cramped plots due to sheer amount of data.
+Again felt an interactive approach lends itself better to this type of analysis.
 
 ## Analysis techniques used
 
-From the 3 csv files 4 more are created 3 via ETL and 1 via merging the 3 cleaned csv files:
+From the 3 csv files 4 more are created 3 via ETL and 1 via merging the 3 cleaned csv files all with
+an applied naming convention:
 
 - Sales_Stores_DataSet_Cleaned.csv
 - Sales_Features_DataSet_Cleaned.csv
@@ -126,7 +127,9 @@ Data was a limiting factor, not in terms of detail but sheer volume and breadth.
 Adapted with a "best guess Mr Sulu" approach to visualising large data, running plot tests to see what the libraries can handle and go beyond, bar, histogram and scatter plots which worked well, as I could
 now use more effective plot types but ran out of time to reimagine the plots.
 
-Analysed plots compared to hypothesis, by checking expected values against queries in the raw data. If the dataset to use if corrupt or incorrect the plot will be useless.
+Analysed plots compared to hypothesis, by checking expected values against queries with the raw data. If the dataset to use is corrupt or incorrect the plot will be useless.
+
+For example the features data set.csv file has 7 months of date values not in sales data-set.csv, so that needed to be filtered before creating the combined csv file.
 
 ## Development Roadmap
 
@@ -135,9 +138,8 @@ Analysed plots compared to hypothesis, by checking expected values against queri
 - Get data into DataFrames and perform ETL
 - Create cleaned csv files for each of the 3 raw csv files
 - Merge the 3 cleaned csv files into a single csv file for visualisation
-- Start with basic plots to visualise the data using all of the available plot libraries to see which
-  provide the best plot for the hypothesis I am testing. Then if have the time try and expand and develop
-  them further. Would be sweet to get some 3D plots in..
+- Visualise the data using all of the available plot libraries (where possible) to see which provide the
+  best plot for the hypothesis I am testing. Then if have the time try and expand and develop them further. Would be sweet to get some 3D plots in..
 - Choose best plots for each hypothesis to use in findings report
 - Populate findings report with plots and analysis for each hypothesis and submit to customer
 
@@ -149,11 +151,13 @@ Analysed plots compared to hypothesis, by checking expected values against queri
   THEN after checking with course fascilitator needed to remove ppscore from the requirements.txt file
   This produced another error which I tracked down to being ydata-profiling so removed that as well
   Re-installed dependancies from the requirements.txt file - works fine.
+- The project tempplate has Python code to change the working directory. On my machine it stayed in the
+  notebook sub folder, so after some insightful help from StackOverFlow I crafted a working solution
 - VS Code repeatedly has a kernel hang randomly during development requiring restarting VS Code  
-  as kernel restart rarely fixed the issue.
+  as kernel restart rarely fixes the issue.
 - First hypothesis raised an unexpected issue as some plot types would not render due to the data size!
   bar plots particularly fell at the first fence. Pity as that would have looked cool...
-  Develoer ignorance perhaps??
+  Developer ignorance perhaps??
 - Trying to visualise plots with plotly.express produced an error stating nbformat was not installed.  
   Used pip install nbformat and added to dependencies in Notebook_Visualisations.ipynb to fix the issue
 
@@ -161,21 +165,23 @@ Analysed plots compared to hypothesis, by checking expected values against queri
 
 - Generative AI tools (Copilot and chatGPT) helped hugely with strange library issues and code snippets
   and the generation of the first sunburst plot
-- Learned aboOt project management, and effective timeboxing for project sections e.g. documentation
+- Learned about project management, and effective timeboxing for project sections e.g. documentation
 - Discovered I preferred plotly as a visualisation tool due to its better appearence and options
 
 ## Who Won The Generative AI Battle?
 
-chatGPT won hands down, I found Copilot in VS Code largely irritating and invasive, and it was not very good at solving code issues a bit of a mixed bag. chatGPT on the other hand was very good at solving code issues and providing code snippets that worked first time. When I went of the rails and without knowing was using the wrong approach to visualising one hypothesis, Copilot's suggested plot was cramped, difficult to read and (as I discovered) the wrong plot type for the data.
+chatGPT won hands down, I found Copilot in VS Code largely irritating and invasive, and it was not very good at solving code issues a bit of a mixed bag. chatGPT on the other hand was very good at solving code issues and providing code snippets that worked first time. When I went of the rails and without knowing it and was using the wrong approach to visualising one hypothesis. Copilot's suggested plot was cramped, difficult to read and (as I discovered) the wrong plot type for the data.
 
-Posted the code into chatGPT and over an hour it honed and rehoned the code to a 92% working solution with a better type of plot. Which of course after a good nights sleep I realised _I_ was using the wrong plot concept and looking at the data visualisation backwards!
+Posted the code into chatGPT and over an hour it honed and rehoned the code to a 92% working solution with a better type of plot. Due to the massive size of the data it caused many rendering issues such as a huge gap between the plot title and the first actual plot and missing x axis labels.
+
+Which of course after a good nights sleep I realised _I_ was using the wrong plot _and_ data visualisationconcept and looking at the data visualisation backwards!
 
 ## Things To Learn Next
 
-- Proper use of KANBAN for project management.
-- How to dynamically create ranges for subplots e.g. stores 1 to 9.
-- Better understanding of the plotly.express library and its options for visualisation.
-- Better understanding interavtive plots and how determine which is best for the data being visualised.
+- Proper use of KANBAN for project management
+- How to dynamically create ranges for subplots e.g. stores 1 to 9
+- Better understanding of the plotly.express library and its options for visualisation
+- Better understanding interactive plots and how determine which is best for the data being visualised
 - Better understanding of how look at a raw csv file and know how to determine what hypothesis can be
   achieved with it.
 
@@ -195,8 +201,8 @@ Posted the code into chatGPT and over an hour it honed and rehoned the code to a
 
 ## Unfixed Bugs
 
-- Had strange issue with first plot in hypothessis 3, where it put: 1e9 in the top left corner of the
-  plot. No idea why. Will have a look if there is a solution if I have time does not affect plot data.
+- Had strange issue with first plot in hypothesis 3, where it puts: 1e9 in the top left corner of the
+  pyplot plot. No idea why. Will have a look if there is a solution if I have time does not affect plot data.
 
 ## Credits
 

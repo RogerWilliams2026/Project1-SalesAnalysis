@@ -1,11 +1,11 @@
 # What Generative AI Was Used For
 
-Throughout this project from time to time Generative Ai was used to help in certain situations, where no amount of critical
+Throughout this project from time to time Generative AI was used to help in certain situations, where no amount of critical
 thinking, pondering or the consumption of thinking biscuits could provide an answer.
 
 This document highlights the areas where Generative AI was used and what it was used for, by providing a "before" and "after" showing what the issue was and what Genertive AI propsed, or the original code and the suggested replacement.
 
-Scenario One:
+**Scenario One:**
 
 Needed to create a new column (StoreType) in dfSales_Stores_DataSet_Work
 So for science decided to see what Copilot could suggest.
@@ -22,11 +22,11 @@ _dfSales_Stores_DataSet_Work["StoreType"] = dfSales_Stores_DataSet_Work["Type"].
 
 _dfSales_Stores_DataSet_Work.head()_
 
-Viable as Type column only has A, B, C values.
+Viable as Type column only has A, B, C values. Why no proper naming conventions Copilot?
 
-Scenario Two:
+**Scenario Two:**
 
-Needed to replace missing values for markdown columns with zero, n dfSales_Features_DataSet_Work so for science asked Copilot for the answer.
+Needed to replace missing values for markdown columns with zero, dfSales_Features_DataSet_Work so for science asked Copilot for the answer and compared it with my own solution.
 
 Copilot responded with:
 
@@ -35,9 +35,9 @@ markdown_cols = ["MarkDown1", "MarkDown2", "MarkDown3", "MarkDown4", "MarkDown5"
 dfSales_Features_DataSet_Work[markdown_cols] = dfSales_Features_DataSet_Work[markdown_cols].fillna(0)
 dfSales_Features_DataSet_Work[markdown_cols].isna().sum()
 
-Works well.
+Works well, mine was a tad conveluted.
 
-Scenario Three:
+**Scenario Three:**
 
 Noticed negative values in MarkDown columns for dfSales_Features_DataSet_Work
 
@@ -95,7 +95,7 @@ _So if you see a negative markdown on a report, it's worth checking how that spe
 
 That explains that nicely will help greatly with the analysis and interpretation of the data.
 
-Scenario Four:
+**Scenario Four:**
 
 Discovered when saving the cleaned DataFrames to CSV, if it contained a date column even if it was formatted as datetime with string format of %d/%m/%Y, when saved to CSV it would be saved in American format of %m/%d/%Y!!
 
@@ -111,16 +111,16 @@ _This is expected behavior. When you convert the column
 you are not storing a formatted date string. You are converting the column to pandas' internal datetime64 type._
 _Pandas stores dates internally without a display format. When you save to CSV, pandas uses its default representation_
 
-Amended my code to so it had index and date_format in the CSV save command e.g:
+Amended my code to so it had index and date_format in the CSV save command e.g:  
 dfCleaned.to_csv(strCurrentDir + CNST_STR_CLEANFILEPATH,index=False, date_format="%d/%m/%Y"
 
-Scenario Five:
+**Scenario Five:**
 
 First visualisation. Was not happy with the x axis as there is no indicator BETWEEN the x axis values
 to show the reader (analyst) what the values are between the x axis values. So asked chatGPT for a solution with this mighty question:
 
-in python matplotlib when a scatter plot is created the x axis markers for values could be 0, 20, 40, 60, 80 is there anyway to get some visual mark on the x axis the values BETWEEN the numbers i.e. a marker for every 2 values a crude ASCII based example
-0 20
+in python matplotlib when a scatter plot is created the x axis markers for values could be 0, 20, 40, 60, 80 is there anyway to get some visual mark on the x axis the values BETWEEN the numbers i.e. a marker for every 2 values a crude ASCII based example:  
+0-------20  
 | | | | | | | | |
 
 chatGPT responded with:
@@ -151,14 +151,14 @@ _plt.show()_
 
 Heavily modfiied the code idea to fit the project.
 
-Scenario Six:
+**Scenario Six:**
 
-When trying to visualise plots with plotly.express could not finf a way to get imtermediate ticks between the x axis values. So asked chatGPT for a solution with this question:
+When trying to visualise plots with plotly.express could not find a way to get imtermediate ticks between the x axis values. So asked chatGPT for a solution with this question:
 
 _python plotly.express create plot with this code_
 _px.scatter(dfSales_Combined_DataSet, x="Temperature", y="Weekly_Sales",
 title="Sales vs Temperature", color="Temperature", opacity=0.5)_
-_how can I get ticks across bot axes?_
+_how can I get ticks across both axes?_
 
 chatGPT responded with:
 
@@ -188,7 +188,7 @@ _)_
 
 Copied it and used it!
 
-Scenario Seven:
+**Scenario Seven:**
 
 Attempting to create a sunburst plot to drill down and show stores and allow user to drill down into the departments and see their weekly sales. After many attempts could not get it to work. So asked chatGPT for a solution, decided not to include my malfunctioning code in case it skewed the result i.e. I was going in the wrong direction and chatGPT makes a poor solution work!
 
