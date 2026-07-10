@@ -49,17 +49,17 @@ The business hopes this basic information will help it plan its store growth and
 
 ## Hypothesis and how to validate?
 
-- Are sales increased if weather is hotter or colder?
+- Are sales increased if weather is hotter or colder in the last 12 months?
   Validation: Test with a suitable plot to show temperature and sales correlation.
-- Sales differences between holiday and non-holiday weeks per store
+- Sales differences between holiday and non-holiday weeks per store in the last 12 months
   Validation: Compare sales using statistical analysis and visualisation techniques.
-- What is most profitable store type?
+- What is most profitable store type in the last 12 months?
   Validation: Compare store types with weekly sales.
-- Does store size affect profitability? If so, how much?
+- Does store size affect profitability? If so, how much in the last 12 months?
   Validation: Compare store size with weekly sales
 -
 
-- Impact of markdowns on sales during holidays versus non holiday periods
+- Impact of markdowns on sales during holidays versus non holiday periods in the last 12 months
   Validation: Compare markdown data before and after the different periods
 -
 
