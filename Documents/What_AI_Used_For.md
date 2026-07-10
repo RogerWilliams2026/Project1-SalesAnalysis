@@ -30,7 +30,7 @@ Needed to replace missing values for markdown columns with zero, n dfSales_Featu
 
 Copilot responded with:
 
-dmarkdown_cols = ["MarkDown1", "MarkDown2", "MarkDown3", "MarkDown4", "MarkDown5"]
+markdown_cols = ["MarkDown1", "MarkDown2", "MarkDown3", "MarkDown4", "MarkDown5"]
 
 dfSales_Features_DataSet_Work[markdown_cols] = dfSales_Features_DataSet_Work[markdown_cols].fillna(0)
 dfSales_Features_DataSet_Work[markdown_cols].isna().sum()
@@ -187,3 +187,78 @@ _ )_
 _)_
 
 Copied it and used it!
+
+Scenario Seven:
+
+Attempting to create a sunburst plot to drill down and show stores and allow user to drill down into the departments and see their weekly sales. After many attempts could not get it to work. So asked chatGPT for a solution, decided not to include my malfunctioning code in case it skewed the result i.e. I was going in the wrong direction and chatGPT makes a poor solution work!
+
+_So asked chatGPT this question:_
+
+_I am doing a python pandas plotly based project which consists of 3 csv files:_
+
+_stores data-set.csv_
+_sales data-set.csv_
+_features data set.csv_
+
+_first csv file columns_
+_Store,Type,Size_
+_Second csv file columns_
+_Store,Dept,Date,Weekly_Sales,IsHoliday_
+
+_Third csv file columns_
+_Store,Date,Temperature,Fuel_Price,MarkDown1,MarkDown2,MarkDown3,MarkDown4,MarkDown5,CPI,Unemployment,IsHoliday_
+
+_I am attempting to create an interactive plotly plot with some sort of "drilldown" but i do not know how to do it, any suggestions?_
+
+It replied with a lot of code examples but the most important part was this:
+
+_With your three CSV files, you have a classic hierarchical retail analytics dataset, which is a good fit for a Plotly "drilldown" style dashboard. Plotly itself does not have a native drilldown chart like some BI tools (Power BI/Tableau), but you can create the same experience using interactive filters, dropdowns, click events, and linked charts._
+
+I asked:
+
+_How can I visualise the data as a sunburst plot?_
+
+It replied with a lot of code these were the most relevant sections:
+
+_import pandas as pd_
+_import plotly.express as px_
+
+_# Load data_
+_stores = pd.read_csv("stores data-set.csv")_
+_sales = pd.read_csv("sales data-set.csv")_
+
+_# Merge store information_
+_df = sales.merge(_
+_ stores,_
+_ on="Store",_
+_ how="left"_
+_)_
+
+_# Aggregate sales by Store and Department_
+_sunburst_data = (_
+_ df.groupby(["Store", "Dept"], as_index=False)_
+_ ["WeeklySales"]_
+_ .sum()_
+_)_
+
+_sunburst_data.head()_
+
+_sunburst_data = (_
+_ df.groupby(_
+_ ["Type", "Store", "Dept"],_
+_ as_index=False_
+_ )_
+_ ["WeeklySales"]_
+_ .sum()_
+_)_
+
+_fig = px.sunburst(_
+_ sunburst_data,_
+_ path=["Type", "Store", "Dept"],_
+_ values="WeeklySales",_
+_ title="Store Type → Store → Department Sales"_
+_)_
+
+_fig.show()_
+
+This code was heavily modified to fit naming conventions and how I needed the plot to look.
