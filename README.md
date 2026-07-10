@@ -31,10 +31,10 @@ There are separate notebooks for ETL on each csv file. THis was done so I can ma
 
 **Notebook Files:**
 
-- Notebook_ETL_Sales_Stores.ipynb <- ETL for Sales_Stores_DataSet.csv
-- Notebook_ETL_Sales_Features.ipynb <- ETL for Sales_Features_DataSet.csv
-- Notebook_ETL_Sales.ipynb <- ETL for Sales_DataSet.csv
-- Notebook_ETL_Sales_Combined.ipynb <- Combines the 3 cleaned csv files into one for visualisation
+- Notebook_ETL_Sales_Stores_DataSet.ipynb <- ETL for Sales_Stores_DataSet.csv
+- Notebook_ETL_Sales_DataSet.ipynb <- ETL for Sales_DataSet.csv
+- Notebook_ETL_Sales_Features_DataSet.ipynb <- ETL for Sales_Features_DataSet.csv
+- Notebook_ETL_Sales_Combined_DataSet.ipynb <- Combines the 3 cleaned csv files into one for visualisation
 - Notebook_Visualisations.ipynb <- Contains the visualisations for the hypotheses
 - Notebook_Reports.ipynb <- Contains the reports for the visualisations
 
@@ -43,6 +43,20 @@ There are separate notebooks for ETL on each csv file. THis was done so I can ma
 What_AI_Used_For.md:
 
 Describes in detail how I used AI to help with issues with the project.
+
+### Using The Notebooks
+
+In order to create the combined csv file and see the plots these notebooks need to be run in order from the Jupyter_notebooks folder:
+
+- Notebook_ETL_Sales_Stores_DataSet.ipynb <- ETL for Sales_Stores_DataSet.csv
+- Notebook_ETL_Sales_DataSet.ipynb <- ETL for Sales_DataSet.csv
+- Notebook_ETL_Sales_Features_DataSet.ipynb <- ETL for Sales_Features_DataSet.csv
+- Notebook_ETL_Sales_Combined_DataSet.ipynb <- Combines the 3 cleaned csv files into one for visualisation
+- Notebook_Visualisations.ipynb <- Contains the visualisations for the hypotheses
+
+To see the final report run the following notebook from the Report folder:
+
+- Notebook_Reports.ipynb <- Contains the reports for the visualisations
 
 ## Business Requirements
 
@@ -64,7 +78,7 @@ The business hopes this information will help it plan its store growth and marke
   Validation: Compare store types with weekly sales.
 - Does store size affect profitability? If so, how much in the last 12 months?
   Validation: Compare store size with weekly sales
-- Weekly Sales by Store and Department Last 12 Months
+- Weekly Sales by Store, Store Type and Department Last 12 Months
   Validation: Compare weekly sales by store and department using appropriate plot
 - Impact of markdowns on sales during holiday periods in the last 12 months by store
   Validation: Accumulate and visualise markdown data per store during holiday periods
@@ -100,7 +114,7 @@ Chose bar plot to show the sales differences between store types. As provides a 
 _Hypothesis 4: Does store size affect profitability? If so, how much in the last 12 months?_
 Chose scatter plot to show the correlation between store size and sales. Due to the large amount of data, a scatter plot is the best way to visualise the data and show the correlation without causing the plot render engine to crash!
 
-_Hypothesis 5: Weekly Sales by Store and Department Last 12 Months_
+_Hypothesis 5: Weekly Sales by Store, Store Type and Department Last 12 Months_
 Chose sunburst plot to allow the viewer to drill down into the data and see the individual departments weekly sales per store. Other types produced large confusing visualisations or cramped plots due to sheer amount of data.
 Felt an interactive approach lends itself better to this type of analysis, and adds a "hands on" approach to data visualisation.
 
